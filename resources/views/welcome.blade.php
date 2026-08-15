@@ -167,6 +167,46 @@
     </div>
 
 
+    <!-- How it Works Section -->
+    <div class="container py-5 mt-5 mb-5" id="how-it-works">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold" style="font-size: 2.5rem; letter-spacing: -0.02em; color: #0f172a;">Cara Kerja AI Kami</h2>
+            <p class="text-muted fs-5">Skrining cerdas dalam tiga langkah sederhana.</p>
+        </div>
+        
+        <div class="row g-4 justify-content-center">
+            <!-- Step 1 -->
+            <div class="col-md-4">
+                <div class="card h-100 p-4 border-0 shadow-sm" style="border-radius: 24px; background: #fff;">
+                    <div class="mb-4 d-inline-flex align-items-center justify-content-center text-primary" style="width: 64px; height: 64px; background: #eff6ff; border-radius: 16px;">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    </div>
+                    <h4 class="fw-bold mb-3" style="color: #0f172a;">1. Isi Kuesioner Medis</h4>
+                    <p class="text-muted mb-0">Jawab pertanyaan singkat mengenai gaya hidup dan riwayat kesehatan sesuai standar pedoman Kementerian Kesehatan.</p>
+                </div>
+            </div>
+            <!-- Step 2 -->
+            <div class="col-md-4">
+                <div class="card h-100 p-4 border-0 shadow-sm" style="border-radius: 24px; background: #fff;">
+                    <div class="mb-4 d-inline-flex align-items-center justify-content-center" style="width: 64px; height: 64px; background: #fdf4ff; color: #d946ef; border-radius: 16px;">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                    </div>
+                    <h4 class="fw-bold mb-3" style="color: #0f172a;">2. Analisis AI Instan</h4>
+                    <p class="text-muted mb-0">Algoritma <i>Machine Learning</i> kami memproses ratusan variabel data Anda secara <i>real-time</i> untuk mengukur level risiko.</p>
+                </div>
+            </div>
+            <!-- Step 3 -->
+            <div class="col-md-4">
+                <div class="card h-100 p-4 border-0 shadow-sm" style="border-radius: 24px; background: #fff;">
+                    <div class="mb-4 d-inline-flex align-items-center justify-content-center" style="width: 64px; height: 64px; background: #f0fdf4; color: #16a34a; border-radius: 16px;">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h4 class="fw-bold mb-3" style="color: #0f172a;">3. Hasil & Rekomendasi</h4>
+                    <p class="text-muted mb-0">Terima laporan risiko komprehensif beserta panduan langkah pencegahan personal atau anjuran rujukan medis.</p>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <footer class="text-center py-4 text-muted small border-top" style="background: transparent;">
         <p class="mb-0">&copy; {{ date('Y') }} GlucoWise ML Screening. Hak Cipta Dilindungi.</p>

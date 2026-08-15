@@ -20,7 +20,7 @@
                     <div class="alert alert-danger">{{ session('error') }}</div>
                 @endif
 
-                <form method="POST" action="{{ route('screening.store') }}">
+                <form id="screeningForm" method="POST" action="{{ route('screening.store') }}">
                     @csrf
                     <div class="row g-4">
                         @foreach($attributes as $attr)
@@ -42,4 +42,19 @@
             </div>
         </div>
     </div>
+    <div id="aiLoadingOverlay" class="d-none position-fixed top-0 start-0 w-100 h-100 bg-white" style="z-index: 9999; opacity: 0.95;">
+        <div class="d-flex flex-column justify-content-center align-items-center h-100 text-center px-4">
+            <div class="spinner-border text-primary mb-4" style="width: 4rem; height: 4rem; border-width: 0.25em;" role="status"></div>
+            <h2 class="fw-bold mb-2">Memproses Analisis...</h2>
+            <p class="text-muted fs-5">AI sedang mengevaluasi ratusan variabel kesehatan Anda berdasarkan Standar Kemenkes RI.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('screeningForm').addEventListener('submit', function() {
+            document.getElementById('aiLoadingOverlay').classList.remove('d-none');
+            // Slight delay before submitting just for effect
+            setTimeout(() => { this.submit(); }, 500); 
+        });
+    </script>
 </x-app-layout>

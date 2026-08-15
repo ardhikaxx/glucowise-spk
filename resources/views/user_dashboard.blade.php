@@ -65,4 +65,48 @@
             </div>
         </div>
     </div>
+
+    <!-- Chart Section -->
+    @if($screenings->count() > 1)
+    <div class="card mt-4 p-4 p-md-5">
+        <h4 class="fw-bold mb-4">Grafik Tren Kesehatan AI</h4>
+        <div style="height: 300px; width: 100%;">
+            <canvas id="riskChart"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const screenings = @json($screenings->reverse()->values());
+        const labels = screenings.map(s => new Date(s.created_at).toLocaleDateString('id-ID', {day: 'numeric', month: 'short'}));
+        const dataPoints = screenings.map(s => s.risk_percentage);
+
+        const ctx = document.getElementById('riskChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Persentase Risiko (%)',
+                    data: dataPoints,
+                    borderColor: '#111827',
+                    backgroundColor: 'rgba(17, 24, 39, 0.1)',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { beginAtZero: true, max: 100 }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+    </script>
+    @endif
 </x-app-layout>
