@@ -14,9 +14,9 @@
         }
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-body); color: #0f172a; margin: 0; }
         
-        /* Hero Card Container */
         .hero-wrapper {
             margin: 1.25rem;
+            margin-top: 2rem;
             border-radius: 36px;
             overflow: hidden;
             position: relative;
@@ -27,6 +27,7 @@
             min-height: 88vh;
             display: flex;
             flex-direction: column;
+            padding-top: 4rem; /* space for capsule */
         }
         .hero-overlay {
             position: absolute;
@@ -40,6 +41,32 @@
             flex-grow: 1;
             display: flex;
             flex-direction: column;
+        }
+
+        /* Floating Capsule Navbar */
+        .navbar-capsule {
+            position: sticky;
+            top: 1.5rem;
+            z-index: 1050;
+            margin: 1.5rem auto -4rem auto; /* pull down hero wrapper */
+            max-width: 90%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 50px;
+            padding: 0.8rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,1);
+        }
+        
+        @media (max-width: 991px) {
+            .navbar-capsule {
+                max-width: 95%;
+                padding: 0.8rem 1.5rem;
+            }
         }
 
         /* Navbar inside Hero */
@@ -112,40 +139,33 @@
             .hero-navbar, .hero-main-text, .hero-widgets { padding-left: 1.5rem; padding-right: 1.5rem; }
             .hero-navbar { padding-top: 1rem; }
             .feature-card { padding: 2.5rem; }
-            .card-img-placeholder { position: static; transform: none; width: 100px; margin-top: 2rem; margin-bottom: 1rem; display: block;}
+            .hero-main-text, .hero-widgets { padding-left: 1.5rem; padding-right: 1.5rem; }
         }
     </style>
 </head>
 <body>
+
+    <!-- Floating Capsule Navbar -->
+    <nav class="navbar-capsule">
+        <a href="#" class="hero-brand d-flex align-items-center gap-1" style="color: #0f172a;">
+            Gluco<span style="color: #1B9C85; font-weight: 500;">Wise</span>
+        </a>
+        
+        <div class="d-flex align-items-center gap-3">
+            @auth
+                <a href="{{ route('dashboard') }}" class="btn-pill-dark" style="background: #0f172a;">Dashboard</a>
+            @else
+                <a href="{{ route('login') }}" class="text-decoration-none fw-bold" style="color: #0f172a;">Masuk</a>
+                <a href="{{ route('register') }}" class="btn-pill-dark">Mulai Skrining</a>
+            @endauth
+        </div>
+    </nav>
 
     <!-- Hero Wrapper mimicking the reference image -->
     <div class="hero-wrapper shadow-lg">
         <div class="hero-overlay"></div>
         <div class="hero-content">
             
-            <!-- Navbar inside Hero -->
-            <nav class="hero-navbar d-flex justify-content-between align-items-center">
-                <a href="#" class="hero-brand d-flex align-items-center gap-1">
-                    Gluco<span style="color: #1B9C85; font-weight: 500;">Wise</span>
-                </a>
-                
-
-                
-                <div class="d-flex align-items-center gap-2">
-                    @auth
-                        <a href="{{ route('dashboard') }}" class="auth-circle" title="Profil">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                        </a>
-                        <a href="{{ route('dashboard') }}" class="btn-pill-dark ms-1">Buka Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="auth-circle" title="Masuk">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                        </a>
-                        <a href="{{ route('login') }}" class="auth-circle" title="Informasi">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
-                        </a>
-                        <a href="{{ route('register') }}" class="btn-pill-dark ms-2">Start your program</a>
-                    @endauth
                 </div>
             </nav>
 
