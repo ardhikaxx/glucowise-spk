@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/ardhikaxx/glucowise-spk/main/public/favicon.ico" alt="GlucoWise Logo" width="80" height="80">
   <h1 align="center">GlucoWise ML Screening</h1>
   
   <p align="center">
