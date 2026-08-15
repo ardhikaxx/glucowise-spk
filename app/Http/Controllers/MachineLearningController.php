@@ -12,6 +12,7 @@ class MachineLearningController extends Controller {
     }
     public function validateModel(Request $request) {
         $method = $request->input('method');
-        return back()->with('success', 'Pengujian keandalan model menggunakan metode ' . strtoupper($method) . ' Validation telah berhasil diselesaikan. Nilai ROC Curve telah dikalkulasi ulang.');
+        return redirect()->route('admin.ml.index', ['validated' => 'true', 'method' => $method])
+            ->with('success', 'Pengujian keandalan model menggunakan metode ' . strtoupper($method) . ' Validation telah berhasil diselesaikan. Nilai ROC Curve telah dikalkulasi ulang.');
     }
 }
