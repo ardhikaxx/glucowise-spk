@@ -23,10 +23,10 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('/dashboard')->with('success', 'Berhasil masuk ke dalam sistem. Selamat datang kembali!');
         }
 
-        return back()->withErrors(['email' => 'Kredensial tidak cocok dengan data kami.']);
+        return back()->with('error', 'Kredensial tidak cocok dengan data kami.')->withInput($request->only('email'));
     }
 
     public function showRegisterForm()
@@ -55,7 +55,7 @@ class AuthController extends Controller
         }
 
         Auth::login($user);
-        return redirect('/dashboard');
+        return redirect('/dashboard')->with('success', 'Registrasi berhasil! Selamat datang di GlucoWise.');
     }
 
     public function logout(Request $request)
@@ -63,6 +63,6 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/');
+        return redirect('/login')->with('success', 'Anda telah berhasil keluar dari sistem.');
     }
 }
