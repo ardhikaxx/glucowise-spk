@@ -141,6 +141,26 @@
             .feature-card { padding: 2.5rem; }
             .hero-main-text, .hero-widgets { padding-left: 1.5rem; padding-right: 1.5rem; }
         }
+        .step-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent !important;
+        }
+        .step-card:hover {
+            transform: translateY(-12px);
+            border-color: #1B9C85 !important;
+            box-shadow: 0 20px 40px rgba(27,156,133,0.12) !important;
+        }
+        .step-number {
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 8rem;
+            font-weight: 800;
+            color: rgba(27,156,133,0.05);
+            z-index: 0;
+            line-height: 1;
+        }
+        .step-content { position: relative; z-index: 1; }
     </style>
 </head>
 <body>
@@ -191,23 +211,66 @@
 
     <!-- About Section -->
     <div class="container py-5 mt-5" id="about">
-        <div class="row justify-content-center">
-            <div class="col-lg-10 text-center">
-                <h2 class="fw-bold mb-5" style="font-size: 2.5rem; letter-spacing: -0.02em; color: #0f172a;">Tentang GlucoWise</h2>
-                <div class="card border-0 shadow-sm p-4 p-md-5 text-start" style="border-radius: 24px; background: #fff;">
-                    <p class="fs-5 text-muted mb-4" style="line-height: 1.8;">
-                        <strong style="color: #1B9C85;">GlucoWise ML Screening</strong> adalah sistem pendukung keputusan cerdas berbasis web yang dirancang untuk melakukan skrining awal Diabetes Mellitus Tipe 2 menggunakan teknologi <i>Machine Learning</i>. Platform ini menganalisis berbagai faktor risiko diabetes—termasuk karakteristik demografi, kebiasaan gaya hidup, riwayat kesehatan keluarga, indikator fisik, hingga gejala awal—untuk memperkirakan tingkat risiko seseorang secara akurat.
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5">
+                <div class="pe-lg-4">
+                    <span class="badge rounded-pill mb-3" style="background-color: #e6f2f0; color: #1B9C85; padding: 0.5rem 1rem; font-weight: 600; border: 1px solid #1B9C85;">Tentang Kami</span>
+                    <h2 class="fw-bold mb-4" style="font-size: 3rem; letter-spacing: -0.02em; color: #0f172a; line-height: 1.1;">
+                        Masa Depan<br><span style="color: #1B9C85;">Skrining Medis.</span>
+                    </h2>
+                    <p class="fs-5 text-muted mb-4" style="line-height: 1.7;">
+                        <strong style="color: #0f172a;">GlucoWise ML Screening</strong> adalah sistem cerdas yang mendisrupsi cara kita mendeteksi risiko Diabetes Mellitus Tipe 2 melalui kekuatan <i>Machine Learning</i>.
                     </p>
-                    <p class="fs-5 text-muted mb-4" style="line-height: 1.8;">
-                        Didukung oleh algoritma <i>Machine Learning</i> yang mutakhir, GlucoWise memproses data yang Anda berikan dan menghasilkan penilaian risiko prediktif yang transparan, lengkap dengan probabilitas dan rekomendasi kesehatan personal. Sistem ini bertujuan membangun kesadaran dini, mendorong gaya hidup preventif, dan membantu masyarakat mengidentifikasi potensi risiko jauh sebelum diagnosis klinis diperlukan.
-                    </p>
-                    <p class="fs-5 text-muted mb-0" style="line-height: 1.8;">
-                        Lebih dari sekadar alat prediksi, platform ini juga menyediakan edukasi kesehatan yang komprehensif, visualisasi analitik, manajemen riwayat skrining, dan laporan hasil yang dapat diunduh. GlucoWise hadir sebagai solusi praktis untuk peningkatan kesadaran kesehatan masyarakat, penelitian akademik, serta inovasi medis dalam program pencegahan dan intervensi dini diabetes.
-                    </p>
+                    <div class="d-flex align-items-center gap-3 mt-5">
+                        <div style="width: 60px; height: 60px; border-radius: 16px; background: #e6f2f0; color: #1B9C85; display: flex; align-items: center; justify-content: center;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-1" style="color: #0f172a;">Akurasi Tinggi</h5>
+                            <p class="text-muted mb-0 small">Analisis ratusan variabel prediktif.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-7">
+                <div class="card border-0 shadow-sm p-4 p-md-5 text-start position-relative overflow-hidden" style="border-radius: 24px; background: #fff;">
+                    <!-- Decorative element -->
+                    <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: #e6f2f0; border-radius: 50%; opacity: 0.5;"></div>
+                    
+                    <div class="position-relative z-1">
+                        <div class="d-flex gap-3 mb-4">
+                            <div style="color: #1B9C85; flex-shrink: 0; padding-top: 5px;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                            </div>
+                            <p class="text-muted mb-0" style="line-height: 1.7; font-size: 1.05rem;">
+                                Didukung oleh algoritma <i>Machine Learning</i> mutakhir, GlucoWise memproses data yang Anda berikan dan menghasilkan penilaian risiko transparan dengan rekomendasi kesehatan personal.
+                            </p>
+                        </div>
+                        
+                        <div class="d-flex gap-3 mb-4">
+                            <div style="color: #1B9C85; flex-shrink: 0; padding-top: 5px;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+                            </div>
+                            <p class="text-muted mb-0" style="line-height: 1.7; font-size: 1.05rem;">
+                                Sistem ini dirancang untuk membangun kesadaran dini dan mendorong gaya hidup preventif sebelum diagnosis klinis diperlukan.
+                            </p>
+                        </div>
+                        
+                        <div class="d-flex gap-3">
+                            <div style="color: #1B9C85; flex-shrink: 0; padding-top: 5px;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            </div>
+                            <p class="text-muted mb-0" style="line-height: 1.7; font-size: 1.05rem;">
+                                Selain prediksi, nikmati fitur edukasi kesehatan, visualisasi data interaktif, serta laporan hasil komprehensif yang siap diunduh untuk konsultasi dokter.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
 
     <!-- How it Works Section -->
     <div class="container py-5 mt-5 mb-5" id="how-it-works">
@@ -216,35 +279,47 @@
             <p class="text-muted fs-5">Skrining cerdas dalam tiga langkah sederhana.</p>
         </div>
         
-        <div class="row g-4 justify-content-center">
+        <div class="row g-4 justify-content-center position-relative">
+            <!-- Decorative line connecting cards -->
+            <div class="d-none d-lg-block" style="position: absolute; top: 30%; left: 10%; right: 10%; height: 2px; border-top: 2px dashed #e5e7eb; z-index: 0;"></div>
+
             <!-- Step 1 -->
-            <div class="col-md-4">
-                <div class="card h-100 p-4 border-0 shadow-sm" style="border-radius: 24px; background: #fff;">
-                    <div class="mb-4 d-inline-flex align-items-center justify-content-center text-primary" style="width: 64px; height: 64px; background: #eff6ff; border-radius: 16px;">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            <div class="col-lg-4 col-md-6 z-1">
+                <div class="card h-100 p-4 border-0 shadow-sm step-card position-relative overflow-hidden" style="border-radius: 24px; background: #fff;">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <div class="mb-4 d-inline-flex align-items-center justify-content-center text-primary" style="width: 64px; height: 64px; background: #eff6ff; border-radius: 16px;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        </div>
+                        <h4 class="fw-bold mb-3" style="color: #0f172a;">Isi Kuesioner Medis</h4>
+                        <p class="text-muted mb-0" style="line-height: 1.7;">Jawab pertanyaan singkat mengenai gaya hidup dan riwayat kesehatan sesuai standar pedoman Kementerian Kesehatan.</p>
                     </div>
-                    <h4 class="fw-bold mb-3" style="color: #0f172a;">1. Isi Kuesioner Medis</h4>
-                    <p class="text-muted mb-0">Jawab pertanyaan singkat mengenai gaya hidup dan riwayat kesehatan sesuai standar pedoman Kementerian Kesehatan.</p>
                 </div>
             </div>
             <!-- Step 2 -->
-            <div class="col-md-4">
-                <div class="card h-100 p-4 border-0 shadow-sm" style="border-radius: 24px; background: #fff;">
-                    <div class="mb-4 d-inline-flex align-items-center justify-content-center" style="width: 64px; height: 64px; background: #fdf4ff; color: #d946ef; border-radius: 16px;">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+            <div class="col-lg-4 col-md-6 z-1">
+                <div class="card h-100 p-4 border-0 shadow-sm step-card position-relative overflow-hidden" style="border-radius: 24px; background: #fff;">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <div class="mb-4 d-inline-flex align-items-center justify-content-center" style="width: 64px; height: 64px; background: #fdf4ff; color: #d946ef; border-radius: 16px;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                        </div>
+                        <h4 class="fw-bold mb-3" style="color: #0f172a;">Analisis AI Instan</h4>
+                        <p class="text-muted mb-0" style="line-height: 1.7;">Algoritma <i>Machine Learning</i> kami memproses ratusan variabel data Anda secara <i>real-time</i> untuk mengukur level risiko secara akurat.</p>
                     </div>
-                    <h4 class="fw-bold mb-3" style="color: #0f172a;">2. Analisis AI Instan</h4>
-                    <p class="text-muted mb-0">Algoritma <i>Machine Learning</i> kami memproses ratusan variabel data Anda secara <i>real-time</i> untuk mengukur level risiko.</p>
                 </div>
             </div>
             <!-- Step 3 -->
-            <div class="col-md-4">
-                <div class="card h-100 p-4 border-0 shadow-sm" style="border-radius: 24px; background: #fff;">
-                    <div class="mb-4 d-inline-flex align-items-center justify-content-center" style="width: 64px; height: 64px; background: #f0fdf4; color: #16a34a; border-radius: 16px;">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <div class="col-lg-4 col-md-6 z-1">
+                <div class="card h-100 p-4 border-0 shadow-sm step-card position-relative overflow-hidden" style="border-radius: 24px; background: #fff;">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <div class="mb-4 d-inline-flex align-items-center justify-content-center" style="width: 64px; height: 64px; background: #f0fdf4; color: #1B9C85; border-radius: 16px;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <h4 class="fw-bold mb-3" style="color: #0f172a;">Hasil & Rekomendasi</h4>
+                        <p class="text-muted mb-0" style="line-height: 1.7;">Terima laporan risiko komprehensif beserta panduan langkah pencegahan personal atau anjuran rujukan medis secara langsung.</p>
                     </div>
-                    <h4 class="fw-bold mb-3" style="color: #0f172a;">3. Hasil & Rekomendasi</h4>
-                    <p class="text-muted mb-0">Terima laporan risiko komprehensif beserta panduan langkah pencegahan personal atau anjuran rujukan medis.</p>
                 </div>
             </div>
         </div>
