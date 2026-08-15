@@ -15,10 +15,10 @@ class AdminSeeder extends Seeder
 
         // Buat akun admin
         $admin = User::firstOrCreate([
-            'email' => 'admin@glucowise.com',
+            'email' => 'admin@gmail.com',
         ], [
             'name' => 'Administrator',
-            'password' => bcrypt('password123'),
+            'password' => bcrypt('password'),
         ]);
 
         $admin->assignRole($role);
