@@ -20,11 +20,11 @@
         .table { border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; margin-bottom: 0; }
         th { font-weight: 600; color: #4b5563; background-color: #f9fafb !important; border-bottom: 1px solid #e5e7eb !important; border-top: 0 !important; }
         td { color: #111827; border-bottom: 1px solid #e5e7eb !important; vertical-align: middle; }
-        .sidebar-bg { background-color: #fff; border-right: 1px solid #e5e7eb; }
-        .nav-pills .nav-link { color: #4b5563; border-radius: 8px; font-weight: 500; padding: 0.5rem 1rem; margin-bottom: 0.25rem; transition: none; }
-        .nav-pills .nav-link.active { background-color: #e6f2f0; color: #1B9C85; font-weight: 600; }
-        .nav-pills .nav-link:hover:not(.active) { background-color: #f9fafb; color: #1B9C85; }
-        
+        .sidebar-bg { background-color: #f8fafc; border-right: 1px solid #f1f5f9; box-shadow: 2px 0 20px rgba(0,0,0,0.02); }
+        .nav-pills .nav-link { color: #64748b; border-radius: 12px; font-weight: 500; padding: 0.8rem 1.25rem; margin-bottom: 0.5rem; transition: all 0.2s ease; display: flex; align-items: center; gap: 0.75rem; }
+        .nav-pills .nav-link.active { background-color: #1B9C85; color: #fff; font-weight: 600; box-shadow: 0 4px 15px rgba(27,156,133,0.25); }
+        .nav-pills .nav-link:hover:not(.active) { background-color: #f1f5f9; color: #0f172a; transform: translateX(5px); }
+        .sidebar-heading { font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; color: #94a3b8; text-transform: uppercase; margin-top: 2rem; margin-bottom: 0.75rem; padding-left: 1.25rem; }
         .bottom-nav { background: #fff; border-top: 1px solid #e5e7eb; }
         .bottom-nav-item { color: #6b7280; font-weight: 500; padding: 0.5rem; border-radius: 8px; }
         .bottom-nav-item.active { color: #1B9C85; background-color: #e6f2f0; }
@@ -48,29 +48,50 @@
                     <span class="fs-4 fw-bold text-dark" style="letter-spacing: -0.5px;">GlucoWise ML Screening</span>
                 </a>
                 
-                <ul class="nav nav-pills flex-column mb-auto">
+                <ul class="nav nav-pills flex-column mb-auto mt-2">
                     <li class="nav-item">
-                        <a href="{{ route('dashboard') }}" class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">Dashboard</a>
+                        <a href="{{ route('dashboard') }}" class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                            Dashboard
+                        </a>
                     </li>
-                    <li class="nav-item text-muted fw-bold mt-4 mb-2 px-3" style="font-size: 0.65rem; letter-spacing: 0.5px;">PENGUJIAN ML</li>
+                    <li class="sidebar-heading">PENGUJIAN ML</li>
                     <li class="nav-item">
-                        <a href="{{ route('admin.training.index') }}" class="nav-link {{ request()->routeIs('admin.training.*') ? 'active' : '' }}">Data Latih</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('admin.ml.index') }}" class="nav-link {{ request()->routeIs('admin.ml.*') ? 'active' : '' }}">Laboratorium ML</a>
-                    </li>
-                    <li class="nav-item text-muted fw-bold mt-4 mb-2 px-3" style="font-size: 0.65rem; letter-spacing: 0.5px;">SISTEM</li>
-                    <li class="nav-item">
-                        <a href="{{ route('admin.users.index') }}" class="nav-link {{ request()->routeIs('admin.users.*') ? 'active' : '' }}">Pengguna</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('admin.articles.index') }}" class="nav-link {{ request()->routeIs('admin.articles.*') ? 'active' : '' }}">Artikel Edukasi</a>
+                        <a href="{{ route('admin.training.index') }}" class="nav-link {{ request()->routeIs('admin.training.*') ? 'active' : '' }}">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+                            Data Latih
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('admin.audit_logs.index') }}" class="nav-link {{ request()->routeIs('admin.audit_logs.*') ? 'active' : '' }}">Audit Log</a>
+                        <a href="{{ route('admin.ml.index') }}" class="nav-link {{ request()->routeIs('admin.ml.*') ? 'active' : '' }}">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v4M15 3v4M4 14l3.5-3.5M16.5 10.5L20 14M12 11v6"></path><circle cx="12" cy="12" r="9"></circle></svg>
+                            Laboratorium ML
+                        </a>
+                    </li>
+                    <li class="sidebar-heading">SISTEM</li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.users.index') }}" class="nav-link {{ request()->routeIs('admin.users.*') ? 'active' : '' }}">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            Pengguna
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('admin.settings.index') }}" class="nav-link {{ request()->routeIs('admin.settings.*') ? 'active' : '' }}">Pengaturan</a>
+                        <a href="{{ route('admin.articles.index') }}" class="nav-link {{ request()->routeIs('admin.articles.*') ? 'active' : '' }}">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            Artikel Edukasi
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.audit_logs.index') }}" class="nav-link {{ request()->routeIs('admin.audit_logs.*') ? 'active' : '' }}">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            Audit Log
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.settings.index') }}" class="nav-link {{ request()->routeIs('admin.settings.*') ? 'active' : '' }}">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                            Pengaturan
+                        </a>
                     </li>
                 </ul>
                 
