@@ -1,58 +1,125 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/ardhikaxx/glucowise-spk/main/public/favicon.ico" alt="GlucoWise Logo" width="80" height="80">
+  <h1 align="center">GlucoWise ML Screening</h1>
+  
+  <p align="center">
+    <strong>Sistem Pakar Cerdas Deteksi Dini Risiko Diabetes Berbasis Machine Learning</strong>
+  </p>
+  
+  <p align="center">
+    <a href="https://laravel.com/"><img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel"></a>
+    <a href="https://php.net/"><img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP"></a>
+    <a href="https://getbootstrap.com/"><img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap"></a>
+    <a href="https://mysql.com/"><img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL"></a>
+  </p>
+</div>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<hr>
 
-## About Laravel
+## 📖 Tentang Aplikasi
+**GlucoWise SPK** adalah aplikasi Sistem Pendukung Keputusan (SPK) berbasis *web* modern yang dirancang untuk melakukan **skrining dini risiko penyakit diabetes** secara cerdas. Aplikasi ini dibangun menggunakan kerangka kerja Laravel dan mengadopsi antarmuka kelas premium (Premium UI/UX) dengan perpaduan warna Teal (`#1B9C85`) yang modern, bersih, dan memanjakan mata.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Sistem ini memiliki ruang **Laboratorium Machine Learning (ML)** bagi *Administrator* untuk menyimulasikan pemrosesan (*preprocessing*), validasi silang (*K-Fold / Holdout*), dan evaluasi performa model menggunakan *ROC Curve* interaktif (melalui *Chart.js*).
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Sistem dikembangkan dan didesain secara penuh oleh **Yanuar Ardhika R.U**.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## ✨ Fitur Utama
+Aplikasi ini membagi hak akses ke dalam dua pilar utama (melalui *Spatie Permission*), yakni **Administrator** dan **Pengguna Umum (Pasien)**.
 
-## Learning Laravel
+### 👑 Administrator (Dasbor Manajemen & Lab ML)
+*   **Dasbor Analitik Interaktif**: Visualisasi *Chart.js* penuh menampilkan statistik skrining harian/bulanan, matriks kebingungan (*confusion matrix*), distribusi risiko pasien, serta metrik akurasi (*Accuracy & F1-Score*).
+*   **Laboratorium ML Terpadu**: Modul simulasi khusus untuk algoritma deteksi diabetes yang mencakup:
+    *   **Preprocessing Data**: Pembersihan *null values*, duplikasi data, dan fitur normalisasi *Z-Score*.
+    *   **Validasi & Evaluasi Engine**: Simulasi perhitungan rasio akurasi *K-Fold Cross Validation* dan *Holdout*, lengkap dengan render *ROC Curve* secara dinamis.
+*   **Manajemen Data Latih (Dataset)**: Mengelola tabel *dataset* kesehatan secara dinamis (didukung *DataTables*).
+*   **Manajemen Sistem Terpusat**: Termasuk pengelolaan Pengguna (Hak Akses), pembuatan Artikel Edukasi, Pengaturan Aplikasi, dan pemantauan aktivitas (*Audit Logs*).
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 👤 Pengguna Umum / Pasien
+*   **Formulir Skrining Cerdas**: Deteksi risiko diabetes berdasarkan rekam medis singkat (Usia, Riwayat Hipertensi, BMI, Gula Darah, dll.).
+*   **Hasil Instan & Unduh PDF**: Hasil prediksi algoritma keluar secara seketika (*real-time*) beserta rekomendasi medis. Pasien dapat mengunduh dokumen laporan medis berekstensi `.pdf`.
+*   **Akses Edukasi Kesehatan**: Membaca artikel literasi seputar kesehatan dan gaya hidup sehat pencegah diabetes.
+*   **Antarmuka Responsif (Mobile-First)**: Halaman pasien menggunakan sistem *Bottom Navigation* yang sangat mudah diakses melalui ponsel cerdas.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🚀 Teknologi yang Digunakan
+*   **Framework Back-End**: [Laravel 11.x](https://laravel.com)
+*   **Bahasa Pemrograman**: PHP 8.4
+*   **Basis Data**: MySQL (via Eloquent ORM)
+*   **Front-End UI**: Vanilla CSS, Bootstrap 5 (Premium Customization)
+*   **Visualisasi Data**: Chart.js 
+*   **Interaksi UX**: SweetAlert2 (Notifikasi interaktif dan konfirmasi *CRUD*)
+*   **Manajemen Peran**: Spatie Laravel Permission
+*   **Pembuatan Dokumen**: Barryvdh DomPDF
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## ⚙️ Panduan Instalasi (Local Development)
+Ikuti panduan berikut untuk menjalankan GlucoWise secara lokal di komputer Anda:
 
-## Agentic Development
+### Persyaratan Sistem
+Pastikan Anda sudah memasang hal-hal berikut:
+- **XAMPP / Laragon** (mendukung PHP 8.2 atau lebih tinggi)
+- **Composer**
+- **Git**
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+### Langkah-langkah Menjalankan Sistem
+1. **Kloning Repositori ini:**
+   ```bash
+   git clone https://github.com/ardhikaxx/glucowise-spk.git
+   cd glucowise-spk
+   ```
 
-```bash
-composer require laravel/boost --dev
+2. **Instalasi Dependencies (Pustaka PHP):**
+   ```bash
+   composer install
+   ```
 
-php artisan boost:install
-```
+3. **Konfigurasi Environment:**
+   Gandakan berkas `.env.example` dan ubah namanya menjadi `.env`:
+   ```bash
+   cp .env.example .env
+   ```
+   Buka berkas `.env` dan atur konfigurasi *database* MySQL Anda:
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=glucowise_db
+   DB_USERNAME=root
+   DB_PASSWORD=
+   ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+4. **Pembuatan Kunci Aplikasi (App Key):**
+   ```bash
+   php artisan key:generate
+   ```
 
-## Contributing
+5. **Migrasi dan *Seeding* Database:**
+   Buat *database* di phpMyAdmin (dengan nama sesuai konfigurasi `DB_DATABASE`). Lalu jalankan perintah berikut untuk mengisi tabel dasar (Peran, Admin Utama):
+   ```bash
+   php artisan migrate:fresh --seed
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+6. **Jalankan Server Lokal:**
+   ```bash
+   php artisan serve
+   ```
+   Aplikasi kini dapat diakses melalui peramban pada alamat: **`http://localhost:8000`**
 
-## Code of Conduct
+## 🔐 Kredensial Uji Coba Default
+Jika Anda menggunakan *Database Seeder*, gunakan akun berikut untuk mencoba aplikasinya:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+| Peran | Email | Kata Sandi |
+| :--- | :--- | :--- |
+| **Administrator** | `admin@glucowise.com` | `password` (atau lihat seeder) |
+| **Pengguna Umum** | Daftar mandiri via fitur registrasi web | - |
 
-## Security Vulnerabilities
+## 🎨 Kebijakan Desain (Design Language)
+Semua perancangan visual dalam sistem ini diformulasikan berdasarkan konsep **"Premium-UI & Accessible Design"**:
+*   Tidak menggunakan *Template Admin* usang berbayar/gratis. Layout diukir dari dasar (secara *custom*).
+*   *Font* utama menggunakan tipografi murni nan tegas **"Inter"** dengan sedikit modifikasi _kerning/tracking_ (-0.03em) agar terlihat rapi dan kelas atas layaknya *startup* modern.
+*   Radius lengkungan *container/button* (`8px` hingga `12px`), batas elemen setebal rambut (`1px solid #e4e4e7`), dan efek bayang bayang presisi tinggi alih-alih bayang standar generik.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 📄 Lisensi Sistem
+Dikembangkan eksklusif oleh **Yanuar Ardhika R.U**. 
+Aplikasi ini dilindungi oleh hak cipta dan dapat digunakan sebagai referensi proyek sistem informasi medis, SPK (Sistem Pendukung Keputusan), atau Sistem Pakar.
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+> *"Good design makes a product useful."* - GlucoWise 2026.
