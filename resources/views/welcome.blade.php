@@ -49,15 +49,16 @@
             top: 1.5rem;
             z-index: 1050;
             margin: 1.5rem auto -4rem auto; /* pull down hero wrapper */
+            width: fit-content;
             max-width: 90%;
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border-radius: 50px;
-            padding: 0.8rem 2rem;
+            padding: 0.8rem 1.5rem 0.8rem 2rem;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 4rem;
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
             border: 1px solid rgba(255,255,255,1);
         }
@@ -65,6 +66,7 @@
         @media (max-width: 991px) {
             .navbar-capsule {
                 max-width: 95%;
+                gap: 2rem;
                 padding: 0.8rem 1.5rem;
             }
         }
