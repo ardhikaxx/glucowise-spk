@@ -165,10 +165,6 @@
     <div class="hero-wrapper shadow-lg">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            
-                </div>
-            </nav>
-
             <!-- Main Hero Text -->
             <div class="hero-main-text">
                 <h1 class="hero-title" style="font-size: clamp(3rem, 5vw, 5.5rem);">GlucoWise<br>ML Screening</h1>
