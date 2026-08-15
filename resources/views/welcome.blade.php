@@ -20,7 +20,7 @@
             border-radius: 36px;
             overflow: hidden;
             position: relative;
-            background-color: #0b1a2e;
+            background-color: #0f2622;
             background-image: url('{{ asset('img/hero_bg.jpg') }}');
             background-size: cover;
             background-position: center;
@@ -31,7 +31,7 @@
         .hero-overlay {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(90deg, rgba(11,26,46,0.95) 0%, rgba(11,26,46,0.8) 40%, rgba(11,26,46,0.2) 100%);
+            background: linear-gradient(90deg, rgba(15,38,34,0.95) 0%, rgba(15,38,34,0.8) 40%, rgba(27,156,133,0.3) 100%);
             z-index: 1;
         }
         .hero-content {
@@ -126,7 +126,7 @@
             <!-- Navbar inside Hero -->
             <nav class="hero-navbar d-flex justify-content-between align-items-center">
                 <a href="#" class="hero-brand d-flex align-items-center gap-1">
-                    Gluco<span style="color: #60a5fa; font-weight: 500;">Wise</span>
+                    Gluco<span style="color: #1B9C85; font-weight: 500;">Wise</span>
                 </a>
                 
 

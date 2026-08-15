@@ -10,27 +10,27 @@
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #fafafa; color: #111827; }
         .card { border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; box-shadow: none !important; }
-        .btn-primary { background-color: #111827; border-color: #111827; border-radius: 8px; font-weight: 500; padding: 0.5rem 1rem; }
-        .btn-primary:hover { background-color: #374151; border-color: #374151; }
-        .btn-outline-primary { color: #111827; border-color: #e5e7eb; border-radius: 8px; font-weight: 500; padding: 0.5rem 1rem; background: #fff; }
-        .btn-outline-primary:hover { background-color: #f3f4f6; color: #111827; border-color: #e5e7eb; }
+        .btn-primary { background-color: #1B9C85; border-color: #1B9C85; border-radius: 8px; font-weight: 500; padding: 0.5rem 1rem; color: #fff; }
+        .btn-primary:hover { background-color: #157e6b; border-color: #157e6b; color: #fff; }
+        .btn-outline-primary { color: #1B9C85; border-color: #1B9C85; border-radius: 8px; font-weight: 500; padding: 0.5rem 1rem; background: #fff; }
+        .btn-outline-primary:hover { background-color: #1B9C85; color: #fff; border-color: #1B9C85; }
         .btn-danger { background-color: #ef4444; border-color: #ef4444; border-radius: 8px; font-weight: 500;}
         .form-control, .form-select { border: 1px solid #e5e7eb; border-radius: 8px; padding: 0.6rem 1rem; box-shadow: none !important; background-color: #fafafa; }
-        .form-control:focus, .form-select:focus { border-color: #111827; background-color: #fff; }
+        .form-control:focus, .form-select:focus { border-color: #1B9C85; background-color: #fff; box-shadow: 0 0 0 0.2rem rgba(27,156,133,0.2) !important; }
         .table { border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; margin-bottom: 0; }
         th { font-weight: 600; color: #4b5563; background-color: #f9fafb !important; border-bottom: 1px solid #e5e7eb !important; border-top: 0 !important; }
         td { color: #111827; border-bottom: 1px solid #e5e7eb !important; vertical-align: middle; }
         .sidebar-bg { background-color: #fff; border-right: 1px solid #e5e7eb; }
         .nav-pills .nav-link { color: #4b5563; border-radius: 8px; font-weight: 500; padding: 0.5rem 1rem; margin-bottom: 0.25rem; transition: none; }
-        .nav-pills .nav-link.active { background-color: #f3f4f6; color: #111827; font-weight: 600; }
-        .nav-pills .nav-link:hover:not(.active) { background-color: #f9fafb; color: #111827; }
+        .nav-pills .nav-link.active { background-color: #e6f2f0; color: #1B9C85; font-weight: 600; }
+        .nav-pills .nav-link:hover:not(.active) { background-color: #f9fafb; color: #1B9C85; }
         
         .bottom-nav { background: #fff; border-top: 1px solid #e5e7eb; }
         .bottom-nav-item { color: #6b7280; font-weight: 500; padding: 0.5rem; border-radius: 8px; }
-        .bottom-nav-item.active { color: #111827; background-color: #f3f4f6; }
+        .bottom-nav-item.active { color: #1B9C85; background-color: #e6f2f0; }
         
-        .progress-bar-flat { background-color: #111827; border-radius: 999px; }
-        .progress-bg-flat { background-color: #e5e7eb; border-radius: 999px; height: 8px; }
+        .progress-bar-flat { background-color: #1B9C85; border-radius: 999px; }
+        .progress-bg-flat { background-color: #e6f2f0; border-radius: 999px; height: 8px; }
         
         .badge-flat { padding: 0.35rem 0.75rem; border-radius: 6px; font-weight: 500; border: 1px solid; }
         .badge-danger-flat { background-color: #fef2f2; color: #ef4444; border-color: #fee2e2; }

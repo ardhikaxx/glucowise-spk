@@ -11,7 +11,7 @@
         .split-layout { min-height: 100vh; display: flex; flex-wrap: wrap; }
         .split-form { width: 100%; display: flex; flex-direction: column; justify-content: center; padding: 3rem 2rem; }
         .split-image { display: none; width: 100%; background-image: url('{{ asset('img/hero_bg.jpg') }}'); background-size: cover; background-position: center; position: relative; }
-        .split-image-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(11,26,46,0.9) 0%, rgba(11,26,46,0.4) 100%); }
+        .split-image-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(15,38,34,0.95) 0%, rgba(27,156,133,0.4) 100%); }
         
         @media (min-width: 992px) {
             .split-form { width: 45%; padding: 4rem 6rem; }
@@ -19,11 +19,11 @@
         }
         
         .form-control { border: 1px solid #e2e8f0; border-radius: 12px; padding: 0.8rem 1.2rem; background-color: #f8fafc; font-size: 1rem; transition: all 0.2s; }
-        .form-control:focus { border-color: #0f172a; background-color: #fff; box-shadow: 0 0 0 4px rgba(15,23,42,0.1); }
+        .form-control:focus { border-color: #1B9C85; background-color: #fff; box-shadow: 0 0 0 4px rgba(27,156,133,0.15); }
         .form-label { font-weight: 600; font-size: 0.9rem; color: #334155; margin-bottom: 0.5rem; }
         
-        .btn-primary { background-color: #0f172a; border: none; border-radius: 12px; font-weight: 600; padding: 0.9rem; font-size: 1rem; transition: background 0.2s; }
-        .btn-primary:hover { background-color: #1e293b; }
+        .btn-primary { background-color: #1B9C85; border: none; border-radius: 12px; font-weight: 600; padding: 0.9rem; font-size: 1rem; transition: background 0.2s; color: #fff;}
+        .btn-primary:hover { background-color: #157e6b; color: #fff; }
         
         .brand-title { font-weight: 800; font-size: 1.75rem; letter-spacing: -0.5px; color: #0f172a; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 3rem; }
         .page-title { font-weight: 700; font-size: 2.25rem; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
@@ -39,7 +39,7 @@
             </a>
 
             <a href="{{ url('/') }}" class="brand-title">
-                Gluco<span style="color: #3b82f6;">Wise</span>
+                Gluco<span style="color: #1B9C85;">Wise</span>
             </a>
             
             <h1 class="page-title">Selamat Datang Kembali</h1>
