@@ -65,7 +65,7 @@ class ScreeningController extends Controller
         }
 
         // Flash to session
-        return redirect()->route('screening.result', ['id' => $screening->id]);
+        return redirect()->route('screening.result', ['id' => $screening->id])->with('success', 'Analisis Kecerdasan Buatan telah selesai. Berikut adalah hasil prediksi Anda.');
     }
 
     public function result(Request $request)
