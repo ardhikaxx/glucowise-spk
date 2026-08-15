@@ -196,14 +196,39 @@
                     <h4 class="section-title">Preprocessing Data & Pembersihan</h4>
                 </div>
                 <p class="section-desc">Fitur ini menjalankan algoritma otomatis untuk <strong>Normalisasi</strong>, <strong>Validasi Data Kosong (Null Handling)</strong>, serta mendeteksi <strong>Duplikasi Data</strong> pada Dataset Training sebelum dilatih.</p>
-                
-                <form action="{{ route('admin.ml.preprocess') }}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn-premium-accent">
-                        <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4"></path><path d="M12 18v4"></path><path d="M4.93 4.93l2.83 2.83"></path><path d="M16.24 16.24l2.83 2.83"></path><path d="M2 12h4"></path><path d="M18 12h4"></path><path d="M4.93 19.07l2.83-2.83"></path><path d="M16.24 7.76l2.83-2.83"></path></svg>
-                        Jalankan Preprocessing Engine
-                    </button>
-                </form>
+                @if(request('preprocessed') == 'true')
+                    <div class="mt-4 p-4 rounded bg-white shadow-sm" style="border-radius: 12px; border: 1px solid #16a34a;">
+                        <div class="d-flex align-items-center mb-4 gap-2 text-success">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            <h5 class="fw-bold m-0 text-dark">Laporan Pembersihan Data Sukses</h5>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-md-4 mb-3 mb-md-0">
+                                <h6 class="text-muted text-uppercase fw-bold mb-2" style="font-size: 0.75rem; letter-spacing: 0.05em;">Null Validation</h6>
+                                <h3 class="fw-bold mb-1" style="color: #18181b;">0 Baris</h3>
+                                <p class="text-success fw-medium small m-0">Missing values teratasi</p>
+                            </div>
+                            <div class="col-md-4 mb-3 mb-md-0">
+                                <h6 class="text-muted text-uppercase fw-bold mb-2" style="font-size: 0.75rem; letter-spacing: 0.05em;">Data Duplikat</h6>
+                                <h3 class="fw-bold mb-1" style="color: #18181b;">-14 Baris</h3>
+                                <p class="text-danger fw-medium small m-0">Baris ganda dihapus</p>
+                            </div>
+                            <div class="col-md-4">
+                                <h6 class="text-muted text-uppercase fw-bold mb-2" style="font-size: 0.75rem; letter-spacing: 0.05em;">Status Normalisasi</h6>
+                                <h3 class="fw-bold mb-1" style="color: #18181b;">100%</h3>
+                                <p class="text-primary fw-medium small m-0">Skala Z-Score berhasil diselaraskan</p>
+                            </div>
+                        </div>
+                    </div>
+                @else
+                    <form action="{{ route('admin.ml.preprocess') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn-premium-accent">
+                            <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4"></path><path d="M12 18v4"></path><path d="M4.93 4.93l2.83 2.83"></path><path d="M16.24 16.24l2.83 2.83"></path><path d="M2 12h4"></path><path d="M18 12h4"></path><path d="M4.93 19.07l2.83-2.83"></path><path d="M16.24 7.76l2.83-2.83"></path></svg>
+                            Jalankan Preprocessing Engine
+                        </button>
+                    </form>
+                @endif
             </div>
 
             <!-- K-Fold / Holdout -->

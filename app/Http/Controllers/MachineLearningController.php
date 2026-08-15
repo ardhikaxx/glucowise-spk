@@ -8,7 +8,8 @@ class MachineLearningController extends Controller {
     }
     public function preprocess() {
         // Proses simulasi preprocessing
-        return back()->with('success', 'Preprocessing selesai: Deteksi data kosong (Null Validation), penanganan duplikasi data, dan normalisasi berhasil dijalankan pada dataset utama.');
+        return redirect()->route('admin.ml.index', ['preprocessed' => 'true'])
+            ->with('success', 'Preprocessing selesai: Deteksi data kosong (Null Validation), penanganan duplikasi data, dan normalisasi berhasil dijalankan pada dataset utama.');
     }
     public function validateModel(Request $request) {
         $method = $request->input('method');
