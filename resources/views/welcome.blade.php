@@ -153,6 +153,7 @@
         
         <div class="d-none d-md-flex align-items-center gap-4 fw-medium">
             <a href="#" class="text-decoration-none" style="color: #1B9C85;">Beranda</a>
+            <a href="#about" class="text-decoration-none" style="color: #475569; transition: color 0.2s;" onmouseover="this.style.color='#1B9C85'" onmouseout="this.style.color='#475569'">Tentang Kami</a>
             <a href="#how-it-works" class="text-decoration-none" style="color: #475569; transition: color 0.2s;" onmouseover="this.style.color='#1B9C85'" onmouseout="this.style.color='#475569'">Cara Kerja AI</a>
         </div>
         
@@ -187,6 +188,26 @@
         </div>
     </div>
 
+
+    <!-- About Section -->
+    <div class="container py-5 mt-5" id="about">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h2 class="fw-bold mb-5" style="font-size: 2.5rem; letter-spacing: -0.02em; color: #0f172a;">Tentang GlucoWise</h2>
+                <div class="card border-0 shadow-sm p-4 p-md-5 text-start" style="border-radius: 24px; background: #fff;">
+                    <p class="fs-5 text-muted mb-4" style="line-height: 1.8;">
+                        <strong style="color: #1B9C85;">GlucoWise ML Screening</strong> adalah sistem pendukung keputusan cerdas berbasis web yang dirancang untuk melakukan skrining awal Diabetes Mellitus Tipe 2 menggunakan teknologi <i>Machine Learning</i>. Platform ini menganalisis berbagai faktor risiko diabetes—termasuk karakteristik demografi, kebiasaan gaya hidup, riwayat kesehatan keluarga, indikator fisik, hingga gejala awal—untuk memperkirakan tingkat risiko seseorang secara akurat.
+                    </p>
+                    <p class="fs-5 text-muted mb-4" style="line-height: 1.8;">
+                        Didukung oleh algoritma <i>Machine Learning</i> yang mutakhir, GlucoWise memproses data yang Anda berikan dan menghasilkan penilaian risiko prediktif yang transparan, lengkap dengan probabilitas dan rekomendasi kesehatan personal. Sistem ini bertujuan membangun kesadaran dini, mendorong gaya hidup preventif, dan membantu masyarakat mengidentifikasi potensi risiko jauh sebelum diagnosis klinis diperlukan.
+                    </p>
+                    <p class="fs-5 text-muted mb-0" style="line-height: 1.8;">
+                        Lebih dari sekadar alat prediksi, platform ini juga menyediakan edukasi kesehatan yang komprehensif, visualisasi analitik, manajemen riwayat skrining, dan laporan hasil yang dapat diunduh. GlucoWise hadir sebagai solusi praktis untuk peningkatan kesadaran kesehatan masyarakat, penelitian akademik, serta inovasi medis dalam program pencegahan dan intervensi dini diabetes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- How it Works Section -->
     <div class="container py-5 mt-5 mb-5" id="how-it-works">
