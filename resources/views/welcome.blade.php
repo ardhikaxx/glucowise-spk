@@ -79,6 +79,9 @@
         .hero-navbar .nav-link:hover { color: #fff; }
         .hero-brand { color: #fff; font-weight: 800; font-size: 1.75rem; text-decoration: none; letter-spacing: -0.5px; }
         
+        .btn-pill-teal { background-color: #1B9C85; color: #fff; border-radius: 50px; font-weight: 600; padding: 0.7rem 1.75rem; border: none; font-size: 0.95rem; transition: background 0.3s; text-decoration: none !important; }
+        .btn-pill-teal:hover { background-color: #157e6b; color: #fff; }
+        
         .btn-pill-dark { background-color: #0f172a; color: #fff; border-radius: 50px; font-weight: 600; padding: 0.7rem 1.75rem; border: none; font-size: 0.95rem; transition: background 0.3s; }
         .btn-pill-dark:hover { background-color: #1e293b; color: #fff; }
         .btn-pill-outline { background-color: transparent; border: 1px solid rgba(255,255,255,0.4); color: #fff; border-radius: 50px; font-weight: 500; padding: 0.7rem 2rem; transition: all 0.3s; font-size: 1rem; }
@@ -138,8 +141,6 @@
         @media (max-width: 991px) {
             .hero-title { font-size: 3.5rem; }
             .hero-wrapper { margin: 0; border-radius: 0; min-height: 100vh; }
-            .hero-navbar, .hero-main-text, .hero-widgets { padding-left: 1.5rem; padding-right: 1.5rem; }
-            .hero-navbar { padding-top: 1rem; }
             .feature-card { padding: 2.5rem; }
             .hero-main-text, .hero-widgets { padding-left: 1.5rem; padding-right: 1.5rem; }
         }
@@ -181,10 +182,10 @@
         
         <div class="d-flex align-items-center gap-3">
             @auth
-                <a href="{{ route('dashboard') }}" class="btn-pill-dark" style="background: #0f172a;">Dashboard</a>
+                <a href="{{ route('dashboard') }}" class="btn-pill-teal">Dashboard</a>
             @else
                 <a href="{{ route('login') }}" class="text-decoration-none fw-bold" style="color: #0f172a;">Masuk</a>
-                <a href="{{ route('register') }}" class="btn-pill-dark">Mulai Skrining</a>
+                <a href="{{ route('register') }}" class="btn-pill-teal">Mulai Skrining</a>
             @endauth
         </div>
     </nav>
