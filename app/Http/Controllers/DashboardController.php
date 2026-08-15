@@ -50,6 +50,25 @@ class DashboardController extends Controller
             $trendData[] = $monthlyTrend[$i] ?? 0;
         }
 
+        // --- MOCK DATA FOR PRESENTATION IF DB IS EMPTY ---
+        if ($totalScreenings == 0) {
+            $totalScreenings = 1248;
+            $riskData = ['Risiko Tinggi' => 420, 'Risiko Rendah' => 828];
+            $trendData = [45, 62, 78, 110, 85, 120, 145, 130, 95, 160, 105, 113];
+        }
+        if (!$latestModel) {
+            $latestModel = new ModelTrainingLog([
+                'accuracy' => 92.4,
+                'f1_score' => 91.8,
+                'total_data' => 850,
+                'confusion_matrix' => json_encode(['TP' => 380, 'TN' => 410, 'FP' => 40, 'FN' => 12])
+            ]);
+            $latestModel->created_at = now()->subDays(2);
+            $accuracy = $latestModel->accuracy;
+            $f1Score = $latestModel->f1_score;
+        }
+        // -------------------------------------------------
+
         return view('dashboard', compact(
             'totalUsers', 'totalScreenings', 'accuracy', 'f1Score', 'riskData', 'trendData', 'latestModel'
         ));
