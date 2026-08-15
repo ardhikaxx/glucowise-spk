@@ -253,6 +253,10 @@
                             Keluar Sistem
                         </button>
                     </form>
+                    <div style="margin-top: 1.25rem; text-align: center; font-size: 0.7rem; color: #a1a1aa; line-height: 1.4;">
+                        &copy; {{ date('Y') }} GlucoWise.<br>
+                        Developed by <span style="font-weight: 600; color: #71717a;">Yanuar Ardhika R.U</span>
+                    </div>
                 </div>
             </aside>
             
@@ -289,6 +293,10 @@
                 @endif
                 {{ $slot ?? '' }}
                 @yield('content')
+                
+                <div class="text-center mt-5 pt-4" style="font-size: 0.75rem; color: #a1a1aa; margin-bottom: 2rem;">
+                    &copy; {{ date('Y') }} GlucoWise. Developed by <span style="font-weight: 600; color: #71717a;">Yanuar Ardhika R.U</span>
+                </div>
             </main>
 
             <!-- Mobile-Friendly Bottom Navigation Bar -->

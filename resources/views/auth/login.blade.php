@@ -67,6 +67,10 @@
             </form>
             
             <p class="text-center text-muted fw-medium mb-0">Belum memiliki akun? <a href="{{ route('register') }}" class="text-primary text-decoration-none fw-bold">Daftar sekarang</a></p>
+            
+            <div class="text-center mt-5 pt-4" style="font-size: 0.75rem; color: #a1a1aa;">
+                &copy; {{ date('Y') }} GlucoWise. Developed by <span style="font-weight: 600; color: #71717a;">Yanuar Ardhika R.U</span>
+            </div>
         </div>
         
         <div class="split-image">
