@@ -33,6 +33,11 @@
 <body>
     <div class="split-layout">
         <div class="split-form">
+            <a href="{{ url('/') }}" class="text-decoration-none text-muted mb-4 d-inline-flex align-items-center gap-2" style="font-size: 0.95rem; font-weight: 500;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Kembali ke Beranda
+            </a>
+
             <a href="{{ url('/') }}" class="brand-title">
                 Gluco<span style="color: #3b82f6;">Wise</span>
             </a>
