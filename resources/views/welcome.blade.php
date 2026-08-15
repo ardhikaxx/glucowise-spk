@@ -147,9 +147,14 @@
 
     <!-- Floating Capsule Navbar -->
     <nav class="navbar-capsule">
-        <a href="#" class="hero-brand d-flex align-items-center gap-1" style="color: #0f172a;">
+        <a href="#" class="hero-brand d-flex align-items-center gap-1" style="color: #0f172a; text-decoration: none;">
             Gluco<span style="color: #1B9C85; font-weight: 500;">Wise</span>
         </a>
+        
+        <div class="d-none d-md-flex align-items-center gap-4 fw-medium">
+            <a href="#" class="text-decoration-none" style="color: #1B9C85;">Beranda</a>
+            <a href="#how-it-works" class="text-decoration-none" style="color: #475569; transition: color 0.2s;" onmouseover="this.style.color='#1B9C85'" onmouseout="this.style.color='#475569'">Cara Kerja AI</a>
+        </div>
         
         <div class="d-flex align-items-center gap-3">
             @auth
