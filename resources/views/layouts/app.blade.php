@@ -257,8 +257,8 @@
             </aside>
             
             <!-- Main Content Area -->
-            <div class="flex-grow-1 p-4 p-md-5">
-                <div class="mx-auto" style="max-width: 1200px;">
+            <div class="flex-grow-1 p-4 p-md-5" style="overflow-x: hidden;">
+                <div class="w-100">
                     @if(isset($header))
                         <div class="mb-4">
                             <!-- Header is rendered in views, typically handled by slot -->
