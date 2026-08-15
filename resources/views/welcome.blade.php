@@ -175,7 +175,7 @@
         </a>
         
         <div class="d-none d-md-flex align-items-center gap-4 fw-medium">
-            <a href="#" class="text-decoration-none" style="color: #1B9C85;">Beranda</a>
+            <a href="#" class="text-decoration-none fw-bold" style="color: #1B9C85;">Beranda</a>
             <a href="#about" class="text-decoration-none" style="color: #475569; transition: color 0.2s;" onmouseover="this.style.color='#1B9C85'" onmouseout="this.style.color='#475569'">Tentang Kami</a>
             <a href="#how-it-works" class="text-decoration-none" style="color: #475569; transition: color 0.2s;" onmouseover="this.style.color='#1B9C85'" onmouseout="this.style.color='#475569'">Cara Kerja AI</a>
         </div>
