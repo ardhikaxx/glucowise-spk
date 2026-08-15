@@ -45,11 +45,7 @@
             <h1 class="page-title">Selamat Datang Kembali</h1>
             <p class="page-subtitle">Masuk untuk melanjutkan aktivitas skrining Anda.</p>
             
-            @if(session('error'))
-                <div class="alert alert-danger" style="border-radius: 12px; border: none; background: #fef2f2; color: #ef4444; font-weight: 500;">
-                    {{ session('error') }}
-                </div>
-            @endif
+
 
             <form method="POST" action="{{ route('login.post') }}">
                 @csrf
@@ -59,7 +55,13 @@
                 </div>
                 <div class="mb-5">
                     <label class="form-label">Password</label>
-                    <input type="password" name="password" class="form-control" placeholder="••••••••" required>
+                    <div class="position-relative">
+                        <input type="password" id="passwordField" name="password" class="form-control pe-5" placeholder="••••••••" required>
+                        <button type="button" class="btn position-absolute top-50 end-0 translate-middle-y border-0 bg-transparent text-muted px-3" onclick="togglePassword('passwordField', this)" tabindex="-1">
+                            <svg class="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            <svg class="eye-slash-icon d-none" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+                        </button>
+                    </div>
                 </div>
                 <button type="submit" class="btn btn-primary w-100 mb-4">Masuk ke Akun</button>
             </form>
@@ -75,5 +77,32 @@
             </div>
         </div>
     </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <script>
+        function togglePassword(inputId, btn) {
+            const input = document.getElementById(inputId);
+            const eyeIcon = btn.querySelector('.eye-icon');
+            const eyeSlashIcon = btn.querySelector('.eye-slash-icon');
+            if (input.type === 'password') {
+                input.type = 'text';
+                eyeIcon.classList.add('d-none');
+                eyeSlashIcon.classList.remove('d-none');
+            } else {
+                input.type = 'password';
+                eyeIcon.classList.remove('d-none');
+                eyeSlashIcon.classList.add('d-none');
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            @if(session('success'))
+                Swal.fire({ icon: 'success', title: 'Berhasil', text: '{!! session('success') !!}', confirmButtonColor: '#1B9C85', customClass: { confirmButton: 'btn btn-primary' } });
+            @endif
+            @if(session('error'))
+                Swal.fire({ icon: 'error', title: 'Gagal', text: '{!! session('error') !!}', confirmButtonColor: '#ef4444' });
+            @endif
+        });
+    </script>
 </body>
 </html>
