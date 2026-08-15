@@ -239,6 +239,7 @@
         </div>
     </div>
 
+    @push('scripts')
     <script>
         $(document).ready(function() {
             $('#dataset-table').DataTable({
@@ -280,4 +281,5 @@
             });
         });
     </script>
+    @endpush
 </x-app-layout>
